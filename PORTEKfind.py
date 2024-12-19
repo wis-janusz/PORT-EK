@@ -22,7 +22,7 @@ def _find_kmers_df(seq_list: list, k, out_dir, group):
     seq_done = 1
     for seq in seq_list:
         kmers_dict = {}
-        for i in range(len(seq.seq) - k):
+        for i in range(len(seq.seq) - k + 1):
             kmer = seq.seq[i : i + k]
             if all(nuc in ["A", "T", "G", "C"] for nuc in kmer):
                 if kmer in kmers_dict.keys():
