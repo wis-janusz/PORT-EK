@@ -1,5 +1,5 @@
 #!/bin/bash
-for k in 9
+for k in 5 7 9 11 13 15 17 19
 do
     mkdir -p output/deer/"$k"mer_indices
     # mkdir -p output/deer/"$k"mer_oob_indices
