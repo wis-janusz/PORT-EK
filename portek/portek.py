@@ -10,6 +10,20 @@ def filter_kmers(kmer_df: pd.DataFrame, freq_cols: list, cons_thr=0.01) -> pd.Da
     out_kmer_df = kmer_df[(kmer_df[freq_cols] > cons_thr).any(axis=1)]
     return out_kmer_df
 
+
+def find_best_k(k_dict:dict) -> int:
+    k_diff = {}
+    for k in sorted(k_dict.keys(), reverse=True):
+        if k+2 in k_dict.keys():
+            k_diff[k] = round(k_dict[k+2][0])-round(k_dict[k][0])
+        else:
+            k_diff[k] = 0
+        if k_diff[k] != 0:
+            best_k = k+2
+            break
+    return best_k
+
+
 def calc_kmer_pvalue(kmer: str, first_group, sec_group, matrix: pd.DataFrame):
     first_obs = (
         matrix.loc[kmer, first_group]

@@ -1,4 +1,5 @@
 from .portek import filter_kmers
+from .portek import find_best_k
 from .portek import calc_kmer_pvalue
 from .portek import build_similarity_graph_two_list
 from .portek import calc_agg_freq

@@ -6,14 +6,14 @@ from datetime import datetime
 
 
 parser = argparse.ArgumentParser(
-    description="Find all kmers in all sequences from a fasta file. Save count and optionally position matrix."
+    description="Find all kmers in all sequences from a fasta file."
 )
 parser.add_argument("in_file", help="path to the .fasta file with input sequences")
 parser.add_argument(
     "out_dir",
     help="absolute path to the output directory, which must already exist",
 )
-parser.add_argument("--k", help="lenght of kmers to find", type=int)
+parser.add_argument("--k", help="length of kmers to find", type=int)
 parser.add_argument("--group", help="name of the sample group", type=str)
 
 
